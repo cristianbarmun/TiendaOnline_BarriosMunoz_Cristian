@@ -4,15 +4,19 @@
 <meta charset="UTF-8">
 <title>Nueva categoría</title>
 <th:block th:include="fragments/head.html :: head"></th:block>
-<link rel="stylsheet" href="/css/styles.css"/>
+<link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
+
 	<form th:action="@{/categorias/new/submit}" th:object="${categorias}"
 		method="post" class="form-horizontal">
 		<fieldset>
+			<a th:href="@{/}">Ir a inicio</a><br> <br> <br>
 
 			<!-- Form Name -->
-			<legend><h1>Nueva Categoría</h1></legend>
+			<legend>
+				<h1>Nueva Categoría</h1>
+			</legend>
 
 			<!-- Text input-->
 			<div class="form-group">

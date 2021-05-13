@@ -7,9 +7,12 @@
 <link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
+
 	<form th:action="@{/productos/new/submit}" th:object="${producto}"
 		method="post" class="form-horizontal">
 		<fieldset>
+
+			<a th:href="@{/}">Ir a inicio</a><br> <br> <br>
 
 			<!-- Form Name -->
 			<legend>
@@ -18,7 +21,7 @@
 
 			<input id="id" name="id" type="hidden" placeholder=""
 				class="form-control input-md" required="" th:field="*{id}">
-				
+
 			<!-- Text input-->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="id_categoria">Id
@@ -107,7 +110,6 @@
 					<button id="nuevo" name="nuevo" class="btn btn-primary">Aceptar</button>
 				</div>
 			</div>
-
 		</fieldset>
 	</form>
 </body>

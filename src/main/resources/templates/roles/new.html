@@ -7,19 +7,18 @@
 <link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
-
 	<form th:action="@{/roles/new/submit}" th:object="${role}"
 		method="post" class="form-horizontal">
 		<fieldset>
-
+			<a th:href="@{/}">Ir a inicio</a><br> <br> <br>
 			<!-- Form Name -->
 			<legend>
 				<h1>Nuevo rol</h1>
 			</legend>
-			
+
 			<input id="id" name="id" type="hidden" placeholder=""
 				class="form-control input-md" required="" th:field="*{id}">
-				
+
 			<!-- Select Basic -->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="selectbasic">Rol</label>

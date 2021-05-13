@@ -10,7 +10,7 @@
 	<form th:action="@{/usuario/new/submit}" th:object="${usuario}"
 		method="post" class="form-horizontal">
 		<fieldset>
-
+			<a th:href="@{/}">Ir a inicio</a><br> <br> <br>
 			<!-- Form Name -->
 			<legend>
 				<h1>Nuevo usuario</h1>
@@ -130,6 +130,7 @@
 					<button id="nuevo" name="nuevo" class="btn btn-primary">Aceptar</button>
 				</div>
 			</div>
+
 		</fieldset>
 	</form>
 </body>

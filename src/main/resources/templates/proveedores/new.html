@@ -7,10 +7,11 @@
 <link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
+
 	<form th:action="@{/proveedores/new/submit}" th:object="${proveedor}"
 		method="post" class="form-horizontal">
 		<fieldset>
-
+			<a th:href="@{/}">Ir a inicio</a><br> <br> <br>
 			<!-- Form Name -->
 			<legend>
 				<h1>Nuevo proveedor</h1>
@@ -19,8 +20,8 @@
 
 			<input id="id" name="id" type="hidden" placeholder=""
 				class="form-control input-md" required="" th:field="*{id}">
-				
-				
+
+
 			<!-- Text input-->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="nombre">Nombre</label>
