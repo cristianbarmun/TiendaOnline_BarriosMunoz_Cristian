@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Nuevo Producto</title>
 <th:block th:include="fragments/head.html :: head"></th:block>
-<link rel="stylsheet" href="/css/styles.css"/>
+<link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
 	<form th:action="@{/productos/new/submit}" th:object="${producto}"
@@ -12,10 +12,13 @@
 		<fieldset>
 
 			<!-- Form Name -->
-			<legend><h1>Nuevo producto</h1></legend>
+			<legend>
+				<h1>Nuevo producto</h1>
+			</legend>
 
-				</div>
-			</div>
+			<input id="id" name="id" type="hidden" placeholder=""
+				class="form-control input-md" required="" th:field="*{id}">
+				
 			<!-- Text input-->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="id_categoria">Id

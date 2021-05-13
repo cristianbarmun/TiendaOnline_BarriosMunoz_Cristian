@@ -4,17 +4,22 @@
 <meta charset="UTF-8">
 <title>Nuevo rol</title>
 <th:block th:include="fragments/head.html :: head"></th:block>
-<link rel="stylsheet" href="/css/styles.css"/>
+<link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
 
-	<form th:action="@{/roles/new/submit}" th:object="${role}" method="post"
-		class="form-horizontal">
+	<form th:action="@{/roles/new/submit}" th:object="${role}"
+		method="post" class="form-horizontal">
 		<fieldset>
 
 			<!-- Form Name -->
-			<legend><h1>Nuevo rol</h1></legend>
-
+			<legend>
+				<h1>Nuevo rol</h1>
+			</legend>
+			
+			<input id="id" name="id" type="hidden" placeholder=""
+				class="form-control input-md" required="" th:field="*{id}">
+				
 			<!-- Select Basic -->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="selectbasic">Rol</label>
