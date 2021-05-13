@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nueva categoría</title>
+<th:block th:include="fragments/head.html :: head"></th:block>
+<link rel="stylsheet" href="/css/styles.css"/>
+</head>
+<body>
+	<form th:action="@{/categorias/new/submit}" th:object="${categorias}"
+		method="post" class="form-horizontal">
+		<fieldset>
+
+			<!-- Form Name -->
+			<legend><h1>Nueva Categoría</h1></legend>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="nombre">Nombre</label>
+				<div class="col-md-4">
+					<input id="nombre" name="nombre" type="text" placeholder=""
+						class="form-control input-md" required="">
+
+				</div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="descripcion">Descripción</label>
+				<div class="col-md-4">
+					<textarea class="form-control" id="descripcion" name="descripcion"></textarea>
+				</div>
+			</div>
+
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="nuevo"></label>
+				<div class="col-md-4">
+					<button id="nuevo" name="nuevo" class="btn btn-primary">Nuevo</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+</body>
+</html>

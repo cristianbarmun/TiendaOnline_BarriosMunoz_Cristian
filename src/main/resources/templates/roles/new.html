@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuevo rol</title>
+<th:block th:include="fragments/head.html :: head"></th:block>
+<link rel="stylsheet" href="/css/styles.css"/>
+</head>
+<body>
+
+	<form th:action="@{/roles/new/submit}" th:object="${role}" method="post"
+		class="form-horizontal">
+		<fieldset>
+
+			<!-- Form Name -->
+			<legend><h1>Nuevo rol</h1></legend>
+
+			<!-- Select Basic -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="selectbasic">Rol</label>
+				<div class="col-md-4">
+					<select id="selectbasic" name="selectbasic" class="form-control">
+						<option value="">Administrador</option>
+						<option value="">Invitado</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="nuevo"></label>
+				<div class="col-md-4">
+					<button id="nuevo" name="nuevo" class="btn btn-primary">Nuevo</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+
+
+</body>
+</html>

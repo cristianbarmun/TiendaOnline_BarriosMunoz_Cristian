@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Categorías</title>
+<th:block th:include="fragments/head.html :: head"></th:block>
+<link rel="stylsheet" href="/css/styles.css" />
+</head>
+<body>
+	<h1 align="center">Listado de categorías</h1>
+	<br>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Descripción</th>
+		</tr>
+		<tr th:each="categoria : ${lista}">
+			<td th:text="${categoria.id}">Id categoría</td>
+			<td th:text="${categoria.nombre}">Nombre</td>
+			<td th:text="${categoria.descripcion}">Descripción</td>
+			<td><a th:href="@{/categorias/edit/}+${categoria.id}">Editar</a></td>
+			<td><a th:href="@{/categorias/eliminar/}+${categoria.id}">Eliminar</a></td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{/categorias/new}">Añadir categoría</a> <br> <br>
+		<br> <a th:href="@{/}">Ir a inicio</a>
+	</p>
+</body>
+</html>

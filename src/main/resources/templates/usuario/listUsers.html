@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Usuarios</title>
+<th:block th:include="fragments/head.html :: head"></th:block>
+<link rel="stylsheet" href="/css/styles.css" />
+</head>
+<body>
+<h1 align="center">Listado de usuarios</h1>
+<br>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Id rol</th>
+			<th>Email</th>
+			<th>Clave</th>
+			<th>Nombre</th>
+			<th>Apellido 1</th>
+			<th>Apellido 2</th>
+			<th>Dirección</th>
+			<th>Localidad</th>
+			<th>Provincia</th>
+			<th>Teléfono</th>
+			<th>DNI</th>
+		</tr>
+		<tr th:each="usuario : ${lista}">
+			<td th:text="${usuario.id}">Id usuario</td>
+			<td th:text="${usuario.id_rol}">Id rol</td>
+			<td th:text="${usuario.email}">Email</td>
+			<td th:text="${usuario.clave}">Clave</td>
+			<td th:text="${usuario.nombre}">Nombre usuario</td>
+			<td th:text="${usuario.apellido1}">Apellido 1 usuario</td>
+			<td th:text="${usuario.apellido2}">Apellidos 2 usuario</td>
+			<td th:text="${usuario.direccion}">Dirección</td>
+			<td th:text="${usuario.localidad}">Localidad</td>
+			<td th:text="${usuario.provincia}">Provincia</td>
+			<td th:text="${usuario.telefono}">Telefono usuario</td>
+			<td th:text="${usuario.dni}">DNI</td>
+			<td><a th:href="@{/usuario/edit/}+${usuario.id}">Editar</a></td>
+			<td><a th:href="@{/usuario/eliminar/}+${usuario.id}">Eliminar</a></td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{/usuario/new}">Añadir usuario</a>
+	</p>
+	<br>
+	<br>
+	<br>
+	<a th:href="@{/}">Ir a inicio</a>
+</body>
+</html>

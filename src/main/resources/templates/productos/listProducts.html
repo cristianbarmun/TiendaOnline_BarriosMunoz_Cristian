@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Productos</title>
+<link rel="stylsheet" href="/css/styles.css" />
+<th:block th:include="fragments/head.html :: head"></th:block>
+</head>
+<body>
+
+<h1 align="center">Listado de productos</h1>
+<br>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Id categoría</th>
+			<th>Nombre</th>
+			<th>Descripción</th>
+			<th>Precio</th>
+			<th>Stock</th>
+			<th>Fecha alta</th>
+			<th>Fecha baja</th>
+			<th>Impuesto</th>
+		</tr>
+		<tr th:each="producto : ${lista}">
+			<td th:text="${producto.id}">Id producto</td>
+			<td th:text="${producto.id_categoria}">Id categoría</td>
+			<td th:text="${producto.nombre}">Nombre</td>
+			<td th:text="${producto.descripcion}">Descripción</td>
+			<td th:text="${producto.precio}">Precio</td>
+			<td th:text="${producto.stock}">Stock</td>
+			<td th:text="${producto.fecha_alta}">Fecha alta</td>
+			<td th:text="${producto.fecha_baja}">Fecha baja</td>
+			<td th:text="${producto.impuesto}">Impuesto</td>
+			<td><a th:href="@{/productos/edit/}+${producto.id}">Editar</a></td>
+			<td><a th:href="@{/productos/eliminar/}+${producto.id}">Eliminar</a></td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{/productos/new}">Añadir producto</a> <br> <br>
+		<br> <a th:href="@{/}">Ir a inicio</a>
+
+
+	</p>
+</body>
+</html>

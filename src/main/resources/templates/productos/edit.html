@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<title>Editar Producto</title>
+<th:block th:include="fragments/head.html :: head"></th:block>
+<link rel="stylsheet" href="/css/styles.css" />
+</head>
+<body>
+	<form th:action="@{/productos/new/submit}" th:object="${producto}"
+		method="post" class="form-horizontal">
+		<fieldset>
+
+			<!-- Form Name -->
+			<legend>Editar producto</legend>
+
+			</div>
+			</div>
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="id_categoria">Id
+					categoría</label>
+				<div class="col-md-4">
+					<input id="id_categoria" name="id_categoria" type="text"
+						placeholder="" class="form-control input-md" required="">
+
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="nombre">Nombre</label>
+				<div class="col-md-4">
+					<input id="nombre" name="nombre" type="text" placeholder=""
+						class="form-control input-md" required="">
+
+				</div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="descripcion">Descripción</label>
+				<div class="col-md-4">
+					<textarea class="form-control" id="descripcion" name="descripcion"></textarea>
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="precio">Precio</label>
+				<div class="col-md-4">
+					<input id="precio" name="precio" type="text" placeholder=""
+						class="form-control input-md" required="">
+
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="stock">Stock</label>
+				<div class="col-md-4">
+					<input id="stock" name="stock" type="text" placeholder=""
+						class="form-control input-md" required="">
+
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="fecha_alta">Fecha
+					alta</label>
+				<div class="col-md-4">
+					<input id="fecha_alta" name="fecha_alta" type="text" placeholder=""
+						class="form-control input-md" required="">
+
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="fecha_baja">Fecha
+					baja</label>
+				<div class="col-md-4">
+					<input id="fecha_baja" name="fecha_baja" type="text" placeholder=""
+						class="form-control input-md" required="">
+
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="impuesto">Impuesto</label>
+				<div class="col-md-4">
+					<input id="impuesto" name="impuesto" type="text" placeholder=""
+						class="form-control input-md" required="">
+
+				</div>
+			</div>
+
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="nuevo"></label>
+				<div class="col-md-4">
+					<button id="editar" name="editar" class="btn btn-primary">Editar</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+</body>
+</html>
