@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Proveedores</title>
+<th:block th:include="fragments/head.html :: head"></th:block>
+<link rel="stylsheet" href="/css/styles.css" />
+</head>
+<body>
+	<h1 align="center">Listado de proveedores</h1>
+	<br>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Dirección</th>
+			<th>Localidad</th>
+			<th>Provincia</th>
+			<th>Teléfono</th>
+			<th>CIF</th>
+			<th>Email</th>
+		</tr>
+		<tr th:each="proveedor : ${lista}">
+			<td th:text="${proveedor.id}">Id proveedor</td>
+			<td th:text="${proveedor.nombre}">Nombre</td>
+			<td th:text="${proveedor.direccion}">Direccion</td>
+			<td th:text="${proveedor.localidad}">Localidad</td>
+			<td th:text="${proveedor.provincia}">Provincia</td>
+			<td th:text="${proveedor.telefono}">Teléfono</td>
+			<td th:text="${proveedor.cif}">CIF</td>
+			<td th:text="${proveedor.email}">Email</td>
+			<td><a th:href="@{/proveedores/edit/}+${proveedor.id}">Editar</a></td>
+			<td><a th:href="@{/proveedores/eliminar/}+${proveedor.id}">Eliminar</a></td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{/proveedores/new}">Añadir proveedor</a> <br> <br>
+		<br> <a th:href="@{/}">Ir a inicio</a>
+	</p>
+</body>
+</html>

@@ -2,66 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Nuevo usuario</title>
+<title>Nuevo proveedor</title>
 <th:block th:include="fragments/head.html :: head"></th:block>
 <link rel="stylsheet" href="/css/styles.css"/>
 </head>
 <body>
-	<form th:action="@{/usuario/new/submit}" th:object="${usuario}"
+	<form th:action="@{/proveedores/new/submit}" th:object="${proveedor}"
 		method="post" class="form-horizontal">
 		<fieldset>
 
 			<!-- Form Name -->
-			<legend><h1>Nuevo usuario</h1></legend>
+			<legend><h1>Nuevo proveedor</h1></legend>
 
 			<!-- Text input-->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="email">Email</label>
-				<div class="col-md-4">
-					<input id="email" name="email" type="text" placeholder=""
-						class="form-control input-md" required="">
-
-				</div>
-			</div>
-
-			<!-- Password input-->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="clave">Clave</label>
-				<div class="col-md-4">
-					<input id="clave" name="clave" type="password" placeholder=""
-						class="form-control input-md" required="">
-
-				</div>
-			</div>
-
-			<!-- Text input-->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="nombre">Nombre
-					usuario</label>
+				<label class="col-md-4 control-label" for="nombre">Nombre</label>
 				<div class="col-md-4">
 					<input id="nombre" name="nombre" type="text" placeholder=""
-						class="form-control input-md" required="">
-
-				</div>
-			</div>
-
-			<!-- Text input-->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="apellido1">Apellido
-					1</label>
-				<div class="col-md-4">
-					<input id="apellido1" name="apellido1" type="text" placeholder=""
-						class="form-control input-md" required="">
-
-				</div>
-			</div>
-
-			<!-- Text input-->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="apellido2">Apellido
-					2</label>
-				<div class="col-md-4">
-					<input id="apellido2" name="apellido2" type="text" placeholder=""
 						class="form-control input-md" required="">
 
 				</div>
@@ -109,15 +66,24 @@
 
 			<!-- Text input-->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="dni">DNI</label>
+				<label class="col-md-4 control-label" for="cif">CIF</label>
 				<div class="col-md-4">
-					<input id="dni" name="dni" type="text" placeholder=""
+					<input id="cif" name="cif" type="text" placeholder=""
 						class="form-control input-md" required="">
 
 				</div>
 			</div>
 
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="email">Email</label>
+				<div class="col-md-4">
+					<input id="email" name="email" type="text" placeholder=""
+						class="form-control input-md" required="">
 
+				</div>
+			</div>
+			
 			<!-- Button -->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="nuevo"></label>
@@ -125,6 +91,7 @@
 					<button id="nuevo" name="nuevo" class="btn btn-primary">Aceptar</button>
 				</div>
 			</div>
+
 		</fieldset>
 	</form>
 </body>
