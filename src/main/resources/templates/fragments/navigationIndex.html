@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"
+		th:fragment="navigation">
+		<div class="container-fluid">
+			<a class="navbar-brand" th:href="@{/}">Tienda Online Cristian</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+				aria-controls="navbarCollapse" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+					<li class="nav-item"><a class="nav-link" th:href="@{/}">Inicio</a></li>
+					
+					<li th:if="${session.usuario != null}" class="nav-item"><a
+						class="nav-link" th:href="@{/usuario/perfil}">Perfil</a></li>
+
+					<li class="nav-item" th:if="${session.usuario == null}"><a
+						class="nav-link" th:href="@{/login}">Login</a></li>
+						
+					<li class="nav-item" th:if="${session.usuario != null}"
+						th:each="opcion : ${session.opcionesMenu}"><a
+						class="nav-link" th:href="@{/} + ${opcion.url_opcion}"
+						th:text="${opcion.opcion}">Menu</a></li>
+
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/carrito/list}">Carrito</a></li>
+						
+					<li th:if="${session.usuario != null}" class="nav-item"><a class="nav-link"
+						th:href="@{/pedido/list}">Pedidos</a></li>
+
+					<li th:if="${session.usuario == null}" class="nav-item"><a
+						class="nav-link" th:href="@{/usuario/listUsers}">Usuario</a></li>
+
+					<li th:if="${session.usuario != null}" class="nav-item"><a
+						class="nav-link" th:href="@{/close}">Cerrar Sesión</a></li>
+				</ul>
+				
+				<form class="d-flex" th:action="@{/busqueda/nombre}" method="get">
+			        <input class="form-control me-2"  type="search" placeholder="Buscar por Nombre" aria-label="Search" name="buscar">
+			        <button class="btn btn-outline-success" type="submit">Buscar</button>
+	      		</form>
+	      		<form class="d-flex" th:action="@{/}" method="get">
+	      		<button class="btn btn-outline-danger" type="submit">Reset</button>
+	      		</form>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>

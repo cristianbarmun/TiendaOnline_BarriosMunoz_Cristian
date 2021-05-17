@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrito</title>
+<link rel="stylesheet" href="/css/lists.css">
+</head>
+<body>
+	<nav th:replace="fragments/navigation.html :: navigation" />
+		<h1>Carrito</h1>
+	<table class="content-table table-striped">
+		<tr>
+			<th>Nombre</th>
+			<th>Categoria</th>
+			<th>Descripción</th>
+			<th>Precio</th>
+		</tr>
+		<tr th:each="producto : ${session.carrito}">
+			<td th:text="${producto.nombre}">Nombre</td>
+			<div th:each="categoria : ${listaCategorias}">
+			<td th:if="${categoria.id == producto.id_categoria}" th:text="${categoria.nombre}">Categoria</td>
+			</div>
+			<td th:text="${producto.descripcion}">Descripcion</td>
+			<td th:text="${producto.precio}">Precio</td>
+			<td><a th:href="@{/carrito/eliminar/} + ${producto.id}"
+				th:text="'Eliminar'" method="get" class="btn btn-outline-danger"></a></td>
+		</tr>
+	</table>
+	<form th:if= "${session.usuario == null || session.usuario.rol == 3}" th:action="@{/carrito/buy}" method="get">
+		<table class="content-table table-striped">
+		<tr>
+			<th>Método Pago</th>
+			<th>Precio</th>
+		</tr>
+		<tr>
+			<td>
+			<div class="form-group">
+				<div class="col-md-5">
+	                <select class="form-control" name="metodoPago">
+	                	<option th:each="metodo : ${metodoPago}" th:value="${metodo.metodoPago}" th:text="${metodo.metodoPago}">Metodo Pago</option>
+	                </select>
+				</div>
+			</div>
+			</td>
+			<td><a th:text="${total}"></a></td>
+		</tr>
+	</table>
+	<div class="anadirUsuario">
+	<a><button type="submit" class="btn btn-outline-primary">Pagar</button></a>
+	</div>
+	</form>
+	<br>
+	<br>
+	<br>
+	<br>	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<footer th:replace="fragments/footer.html :: footer" />
+</body>
+</html>

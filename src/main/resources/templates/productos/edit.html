@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Editar producto</title>
 </head>
 <title>Editar Producto</title>
 <th:block th:include="fragments/head.html :: head"></th:block>
 <link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
+
+<nav th:replace="fragments/navigationIndex.html :: navigation" />
 	<form th:action="@{/productos/new/submit}" th:object="${producto}"
 		method="post" class="form-horizontal">
 		<fieldset>
@@ -21,7 +23,7 @@
 			<!-- Text input-->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="id_categoria">Id
-					categoría</label>
+					categorÃ­a</label>
 				<div class="col-md-4">
 					<input id="id_categoria" name="id_categoria" type="text"
 						placeholder="" class="form-control input-md" required="">
@@ -41,7 +43,7 @@
 
 			<!-- Textarea -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="descripcion">Descripción</label>
+				<label class="col-md-4 control-label" for="descripcion">DescripciÃ³n</label>
 				<div class="col-md-4">
 					<textarea class="form-control" id="descripcion" name="descripcion"></textarea>
 				</div>

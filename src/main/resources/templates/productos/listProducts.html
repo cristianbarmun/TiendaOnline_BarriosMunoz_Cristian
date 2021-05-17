@@ -22,7 +22,7 @@
 			<th>Fecha baja</th>
 			<th>Impuesto</th>
 		</tr>
-		<tr th:each="producto : ${lista}">
+		<tr th:each="producto : ${listaProductos}">
 			<td th:text="${producto.id}">Id producto</td>
 			<td th:text="${producto.id_categoria}">Id categoría</td>
 			<td th:text="${producto.nombre}">Nombre</td>
@@ -37,8 +37,7 @@
 		</tr>
 	</table>
 	<p>
-		<a th:href="@{/productos/new}">Añadir producto</a> <br> <br>
-		<br> <a th:href="@{/}">Ir a inicio</a>
+		<a th:href="@{/productos/new}">Añadir producto</a>
 
 
 	</p>

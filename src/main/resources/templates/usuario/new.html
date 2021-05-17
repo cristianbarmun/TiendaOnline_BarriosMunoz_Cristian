@@ -7,10 +7,11 @@
 <link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
+
+	<nav th:replace="fragments/navigationIndex.html :: navigation" />
 	<form th:action="@{/usuario/new/submit}" th:object="${usuario}"
 		method="post" class="form-horizontal">
 		<fieldset>
-			<a th:href="@{/}">Ir a inicio</a><br> <br> <br>
 			<!-- Form Name -->
 			<legend>
 				<h1>Nuevo usuario</h1>

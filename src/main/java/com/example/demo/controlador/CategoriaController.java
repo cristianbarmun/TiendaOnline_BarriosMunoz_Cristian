@@ -34,7 +34,7 @@ public class CategoriaController {
 		 */
 		List<Categoria> milista = categoriaServicio.obtenerTodosCategorias();
 
-		model.addAttribute("lista", milista);
+		model.addAttribute("listaCategorias", milista);
 
 		return "/categorias/listCategorias";
 	}

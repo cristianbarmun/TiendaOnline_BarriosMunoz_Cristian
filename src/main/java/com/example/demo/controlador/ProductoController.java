@@ -15,12 +15,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.Producto;
+import com.example.demo.service.CategoriaService;
 import com.example.demo.service.ProductoServiceImp;
+import com.example.demo.service.UsuarioService;
 
 @Controller
 @RequestMapping("/productos")
 public class ProductoController {
 
+	@Autowired
+	private CategoriaService categoriaService;
+	@Autowired
+	private UsuarioService usuarioService;
 	@Autowired
 	private ProductoServiceImp productoServicio;// = new ProductoServiceImp();
 
@@ -38,7 +44,7 @@ public class ProductoController {
 		 */
 		List<Producto> milista = productoServicio.obtenerTodosProductos();
 
-		model.addAttribute("lista", milista);
+		model.addAttribute("listaProductos", milista);
 
 		return "/productos/listProducts";
 	}

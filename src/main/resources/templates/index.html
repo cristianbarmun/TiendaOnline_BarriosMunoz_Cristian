@@ -1,21 +1,78 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-<title>Tienda Online</title>
 <meta charset="UTF-8">
-<link rel="stylsheet" href="/css/styles.css" />
+<head>
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>Tienda Online</title>
+<th:block th:include="fragments/head.html"></th:block>
+<link rel="stylesheet" href="/css/listProducto.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+	rel="stylesheet">
 </head>
 <body>
 
-<h1>Mi tienda online</h1>
+	<nav th:replace="fragments/navigationIndex.html :: navigation" />
+	
+	<h1 align="center">Listado de productos</h1>
+<br>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Id categoría</th>
+			<th>Nombre</th>
+			<th>Descripción</th>
+			<th>Precio</th>
+			<th>Stock</th>
+			<th>Fecha alta</th>
+			<th>Fecha baja</th>
+			<th>Impuesto</th>
+		</tr>
+		<tr th:each="producto : ${listaProductos}">
+			<td th:text="${producto.id}">Id producto</td>
+			<td th:text="${producto.id_categoria}">Id categoría</td>
+			<td th:text="${producto.nombre}">Nombre</td>
+			<td th:text="${producto.descripcion}">Descripción</td>
+			<td th:text="${producto.precio}">Precio</td>
+			<td th:text="${producto.stock}">Stock</td>
+			<td th:text="${producto.fecha_alta}">Fecha alta</td>
+			<td th:text="${producto.fecha_baja}">Fecha baja</td>
+			<td th:text="${producto.impuesto}">Impuesto</td>
+			<td><a th:href="@{/productos/edit/}+${producto.id}">Editar</a></td>
+			<td><a th:href="@{/productos/eliminar/}+${producto.id}">Eliminar</a></td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{/productos/new}">Añadir producto</a>
+	
+		
+<!-- <div class="wrap">
+		<div class="store-wrapper">
+			<div class="category_list" th:each="categoria : ${listaCategorias}">
 
-	<ul>
-		<li><h2><a th:href="@{/usuario/listUsers}">Usuario</a></h2></li>
-		<li><h2><a th:href="@{/productos/listProducts}">Producto</a></h2></li>
-		<li><h2><a th:href="@{/categorias/listCategorias}">Categorías</a></h2></li>
-		<li><h2><a th:href="@{/roles/listRoles}">Roles</a></h2></li>
-		<li><h2><a th:href="@{/proveedores/listProviders}">Proveedores</a></h2></li>
-	</ul>
+				<a type="button" class="category_item" th:text="${categoria.nombre}">Categoria</a>
+				<section class="products-list">
+					<div th:each="producto : ${listaProductos}"
+						th:if="${categoria.id == producto.id_categoria}"
+						class="product-item">
+						<img th:src="@{/img/}+${producto.imagen}" />
+						<p th:text="${producto.nombre}">Nombre</p>
+						<small class="text-muted"
+							th:text="${producto.stock}+' productos disponibles'"></small> <a
+							th:href="@{/carrito/anadir/} + ${producto.id}"
+							th:text="'Añadir Al Carrito'" method="get"
+							class="btn btn-sm btn-outline-secondary"> </a> <a
+							th:href="@{/productos/listProducts/} + ${producto.id}"
+							th:text="'Ver Producto'" method="get"
+							class="btn btn-sm btn-outline-secondary"> </a>
+					</div>
+				</section>
+			</div>
+			<br>
+		</div>
+	</div>
+	 -->
 </body>
 </html>

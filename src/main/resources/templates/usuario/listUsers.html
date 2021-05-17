@@ -7,6 +7,8 @@
 <link rel="stylsheet" href="/css/styles.css" />
 </head>
 <body>
+<nav th:replace="fragments/navigationIndex.html :: navigation" />
+
 <h1 align="center">Listado de usuarios</h1>
 <br>
 	<table class="table table-striped">
@@ -44,9 +46,5 @@
 	<p>
 		<a th:href="@{/usuario/new}">Añadir usuario</a>
 	</p>
-	<br>
-	<br>
-	<br>
-	<a th:href="@{/}">Ir a inicio</a>
 </body>
 </html>
