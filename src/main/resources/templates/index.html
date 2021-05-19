@@ -15,9 +15,9 @@
 <body>
 
 	<nav th:replace="fragments/navigationIndex.html :: navigation" />
-	
+
 	<h1 align="center">Listado de productos</h1>
-<br>
+	<br>
 	<table class="table table-striped">
 		<tr>
 			<th>Id</th>
@@ -46,9 +46,10 @@
 	</table>
 	<p>
 		<a th:href="@{/productos/new}">Añadir producto</a>
-	
-		
-<!-- <div class="wrap">
+	</p>
+
+
+	<!-- <div class="wrap">
 		<div class="store-wrapper">
 			<div class="category_list" th:each="categoria : ${listaCategorias}">
 
