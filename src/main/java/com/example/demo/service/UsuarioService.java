@@ -33,6 +33,14 @@ public interface UsuarioService {
 	Usuario obtenerUsuario(int id);
 
 	/**
+	 * Devuelve el usuario correspondiente al email si existe
+	 * 
+	 * @param email Email del producto
+	 * @return
+	 */
+	Usuario obtenerUsuario(String email);
+
+	/**
 	 * Elimina el usuario correspondiente al id
 	 * 
 	 * @param id Id del producto
